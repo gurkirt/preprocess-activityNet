@@ -1,0 +1,8 @@
+*.pyc
+*.txt
+*~
+*.mat
+hfiles/info.tsv
+python-scripts/vidInfos/*
+python-scripts/temp/*
+metadata/*
