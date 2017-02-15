@@ -70,14 +70,16 @@ def main():
     verbose = 0
     count = 0;
     nullvids = [];
+    th = .1
     for videoID in database.keys():      
             videoname = vidDir+'v_'+videoID;
-            count+=1;
-            print 'doing ',videoname,' ecount ',ecount,' out of ',count
+            
             vidinfo = database[videoID]
             # vidinfo = tsvDB['v_'+videoID]
             mydict = {'isnull':0}
             if 'v_'+videoID in ffprobeDBinfo.keys():
+                count+=1;
+                # print 'doing ',videoname,' ecount ',ecount,' out of ',count
                 storageDir = imgDir+'v_'+videoID+"/"
                 #print vidinfo
                 ffvidinfo =  ffprobeDBinfo['v_'+videoID]
@@ -85,10 +87,11 @@ def main():
                 #print ffvidinfo
                 dur = float(vidinfo['duration'])
                 ffdur = float(ffvidinfo['duration'])
-                if abs(ffdur-dur)>0.8:
-                    cmd  = 'ffprobe -v quiet -print_format json  -show_streams -count_frames {} >>{}'.format(vidfile,tfile)
+                if abs(ffdur-dur)>th:
+                    #cmd  = 'ffprobe -v quiet -print_format json  -show_streams -count_frames {} >>{}'.format(vidfile,tfile)
                     ecount +=1
-            print 'diff more than 1 sec is ', ecount
+                    print 'Duration difference more than ', th*1000 ,' milliseconds in', videoID, ' vid count ', count
+    print 'Number of video with duration difference  more than', th*1000 , ' milliseconds are ', ecount
 
 
 if __name__ == '__main__':
@@ -98,8 +101,5 @@ if __name__ == '__main__':
     ############################
     fps = 15; # set fps = 0 if you want to extract at original frame rate
     main()
-    # extractframes(vids,fps)
-    ###########################    
-    # saveVidInfo(sorted(vids))
     
     

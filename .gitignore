@@ -1,6 +1,7 @@
 *.pyc
 *.txt
 *~
+*.backup
 *.mat
 hfiles/info.tsv
 python-scripts/vidInfos/*

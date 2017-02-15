@@ -12,8 +12,6 @@ import math,pickle,shutil,os
 import json
 
 baseDir = "/mnt/jupiter-gamma/actnet/";
-vidDir = "/mnt/jupiter-gamma/actnet/videos/";
-imgDir = "/mnt/jupiter-gamma/actnet/rgb-images/";
 annotFile = "../hfiles/activity_net.v1-3.min.json"
 
 def getAnnotations():
@@ -116,7 +114,7 @@ if __name__ == '__main__':
     print 'number of videos downloded are ', len(downloaded) 
     ############################
     fps = 15; # set fps = 0 if you want to extract at original frame rate
-    #extractframes(sorted(downloaded),fps)
+    extractframes(sorted(downloaded),fps)
     ###########################    
     saveVidInfo(sorted(downloaded))
     # checkConverted(sorted(downloaded))
