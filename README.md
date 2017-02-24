@@ -8,7 +8,7 @@ Finally, after dataset cross check. We will go for original aim of [actNet-inAct
 to generate frame level (start frame and end frame for an activity instance) annotations rather than time level (start time and end time of activity instance).
 
 ## Dependencies 
-*ffmpeg* is only dependency. You install it on Ubuntu using *sudo apt-get install ffmpeg*
+**ffmpeg** is only dependency. You install it on Ubuntu using **sudo apt-get install ffmpeg**
 
 Also, download the video files using [Crawler](https://github.com/activitynet/ActivityNet)
 
@@ -18,14 +18,14 @@ All the utility scripts are in *python-scripts* directory.
 
 ### Script No. 1: *extractMP4toJPG-ffmpeg.py*
 
-It takes base path to videos directory as input. Change *baseDir* according to your uses.
+It takes base path to videos directory as input. Change **baseDir** according to your uses.
 
-It will create *images* directory base path along with with *videos* directory.
+It will create **images** directory base path along with with *videos* directory.
 
-It will extract images from video at fps without any change; you change fps if you want. If fps set to 0 then if use video's default fps.
+It will extract images from video at a set fps (15); you can change fps. If fps set to 0 then it uses the video's default fps.
 
-Next, it has another function that saves the meta information about video using *ffprobe*. This will dump <videoname>.json file in subdirectory *videinfos*. 
-Finally, single file contain meta data of all the videos is dumped in *../hfiles/videinfo.json*.
+Next, it has another function that saves the meta information about video using **ffprobe**. This will dump videoname.json file in subdirectory **videinfos**. 
+Finally, single file contain meta data of all the videos is dumped in **../hfiles/videinfo.json**.
 
 ### Script No. 2: *crossCheck.py*
 
