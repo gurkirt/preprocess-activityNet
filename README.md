@@ -18,9 +18,9 @@ All the utility scripts are in *python-scripts* directory.
 
 ### Script No. 1: *extractMP4toJPG-ffmpeg.py*
 
-It takes base path to videos directory as input. Change **baseDir** according to your uses.
+It takes base path to **videos** directory as input. Change **baseDir** according to your uses.
 
-It will create **images** directory base path along with with *videos* directory.
+It will create **images** directory in base path(baseDir) along with with **videos** directory.
 
 It will extract images from video at a set fps (15); you can change fps. If fps set to 0 then it uses the video's default fps.
 
