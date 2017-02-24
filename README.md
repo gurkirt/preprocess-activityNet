@@ -1,4 +1,4 @@
-### Introduction 
+## Introduction 
 This repository is intended to provide utility scripts to pre-process ActivityNet dataset for detection task. 
 Also, it provide a script to cross check if your downloaded video files are same they were suppose to be.
 There could be multiple reasons that downloaded video files has been altered from the original video files on which annotations were annotated. 
@@ -16,7 +16,7 @@ Also, download the video files using [Crawler](https://github.com/activitynet/Ac
 
 All the utility scripts are in *python-scripts* directory.
 
-# Script No. 1: *extractMP4toJPG-ffmpeg.py*
+### Script No. 1: *extractMP4toJPG-ffmpeg.py*
 
 It takes base path to videos directory as input. Change *baseDir* according to your uses.
 
@@ -27,10 +27,8 @@ It will extract images from video at fps without any change; you change fps if y
 Next, it has another function that saves the meta information about video using *ffprobe*. This will dump <videoname>.json file in subdirectory *videinfos*. 
 Finally, single file contain meta data of all the videos is dumped in *../hfiles/videinfo.json*.
 
-# Script No. 2: *crossCheck.py*
+### Script No. 2: *crossCheck.py*
 
 It reads *../hfiles/videinfo.json* and annotations. It cross check the discrepancy between duration of video provided in annotation and videinfo.json. 
 
-
-
-please let me know if you have some suggestions on <guru094> at <gmail> dot <com>
+please let me know if you find any bug or have suggestions on <guru094> at <gmail> dot <com>
