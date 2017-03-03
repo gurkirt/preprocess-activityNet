@@ -1,6 +1,6 @@
 '''
 
-Autor: Gurkirt Singh
+Author: Gurkirt Singh
 Start data: 2nd May 2016
 purpose: of this file is to take all .mp4 videos and convert them to jpg images
 
